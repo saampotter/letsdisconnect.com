@@ -1,0 +1,16 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Feature {
+  id Int @default(autoincrement()) @id
+  name String
+  votes Int
+  userGenerated Boolean
+  createdAt DateTime @default(now())
+}
